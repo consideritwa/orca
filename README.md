@@ -5,10 +5,16 @@ The Microsoft Defender for Office 365 Recommended Configuration Analyzer (ORCA)
 ORCA is a report that you can run in your environment which can highlight known configuration issues and improvements which can impact your experience with Microsoft Defender for Office 365 (formerly Office 365 Advanced Threat Protection).
 
 ## What's in scope
+* Configuration Health Index
 * Configuration in EOP which can impact ATP
 * SafeLinks configuration
 * SafeAttachments configuration
 * Antiphish and antispoof policies.
+
+## What is Configuration Health Index
+
+The configuration health index is a weighted value representing your configuration. Not all configuration is considered and some configuration is weighted higher than others. The index is represented as a percentage. How the configuration impacts the configuration health index is shown next to the recommendation in the report below as a positive or negative number. The impact to your security posture is a large consideration factor when rating the configuration.
+
 
 ## Sounds good! How do I run it?
 
@@ -135,11 +141,11 @@ The key that we will use is 'id' in the CosmosDB. Make sure you specify this as 
 
 Example - To output in to MyCosmosAccount database MyCosmosDB, the default collection will be ORCA
 
-`Invoke-ORCA -Output Cosmos -OutputOptions @{Cosmos=@{Account='MyCosmosAccount';Database='MyCosmosDB';Key='GFJqJesi2Rq910E0G7P4WoZkzowzbj23Sm9DUWFX0l0P8o16mYyuaZBN00Nbtj9F1QQnumzZKSGZwknXGERrlA=='}}`
+`Invoke-ORCA -Output Cosmos -OutputOptions @{Cosmos=@{Account='MyCosmosAccount';Database='MyCosmosDB';Key='YourKeyvalue'}}`
 
 Example - To output in to MyCosmosAccount database MyCosmosDB, in to a collection called MyORCA
 
-`Invoke-ORCA -Output Cosmos -OutputOptions @{Cosmos=@{Account='MyCosmosAccount';Database='MyCosmosDB';Key='GFJqJesi2Rq910E0G7P4WoZkzowzbj23Sm9DUWFX0l0P8o16mYyuaZBN00Nbtj9F1QQnumzZKSGZwknXGERrlA==';Collection='MyORCA'}}`
+`Invoke-ORCA -Output Cosmos -OutputOptions @{Cosmos=@{Account='MyCosmosAccount';Database='MyCosmosDB';Key='YourKeyvalue==';Collection='MyORCA'}}`
 
 #### Supported Params
 
